@@ -1,0 +1,33 @@
+$max-width: 100%;
+$total-columns: 12;
+$gutter: 2rem;
+
+@mixin grid-row($outer-margin: 0px, $max-width: $max-width) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0px $outer-margin;
+    max-width: $max-width;
+}
+
+@mixin grid-column($columns: 1, $total-columns: $total-columns, $gutter: $gutter) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc(((100% + #{$gutter}) / #{$total-columns}) * #{$columns} - #{$gutter});
+    flex-grow: 0;
+    flex-shrink: 0;
+    margin-right: $gutter;
+    &:last-child{
+        margin-right: 0;
+    }
+}
+
+@mixin grid-push($columns: 1, $margin-left: 1, $total-columns: $total-columns, $gutter: $gutter) {
+    flex-basis: calc(((100% + #{$gutter}) / #{$total-columns}) * #{$columns} - #{$gutter});
+    margin-left: calc(((100% + #{$gutter}) / #{$total-columns}) * #{$margin-left} - #{$gutter});
+}
+
+@mixin grid-pull($columns: 1, $margin-left: 1, $total-columns: $total-columns, $gutter: $gutter) {
+    flex-basis: calc(((100% + #{$gutter}) / #{$total-columns}) * #{$columns} - #{$gutter});
+    margin-left: calc((((100% + #{$gutter}) / #{$total-columns}) * #{$margin-left} - #{$gutter}) * -1);
+}

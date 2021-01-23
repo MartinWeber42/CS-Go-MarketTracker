@@ -1,0 +1,69 @@
+@import '_grid';
+
+$phone-down: "max-width: 599px";
+$phone-up: "min-width: 600px";
+$tablet-down: "max-width: 767px";
+$tablet-up: "min-width: 768px";
+$desktop-down: "max-width: 1023px";
+$desktop-up: "min-width: 1024px";
+$desktop-wide-down: "max-width: 1279px";
+$desktop-wide-up: "min-width: 1280px";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#targetHTML {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+//____________________________________________________________________________
+//____________________________________________________________________________
+// header
+//____________________________________________________________________________
+//____________________________________________________________________________
+#main {
+    @include grid-row();
+    background-color: #232728;
+    height: 100vh;
+    width: 100%;
+
+
+    form {
+        background-color: #323738;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        margin: auto;
+        width: 20%;
+
+        h1 {
+            color: #fff;
+            text-align: center;
+            margin-bottom: 24px;
+            margin-top: 24px;
+        }
+
+        input {
+            border-radius: 4px;
+            border: 0px;
+            height: 32px;
+            margin: 8px auto 8px auto;
+            padding-left: 8px;
+            width: 80%;
+        }
+
+        input[type=submit] {
+            background-color: #4db5da;
+            color: #fff;
+            cursor: pointer;
+            margin: 8px auto 40px auto;
+            width: 83%;
+        }
+    }
+}
