@@ -19,11 +19,14 @@ $desktop-wide-up: "min-width: 1280px";
 }
 
 html {
+    font-family: 'Lora', serif;
     scroll-behavior: smooth;
 }
 
 body {
     background-color: #232728;
+    max-width: 1280px;
+    margin: auto;
 
     nav {
         @include grid_row();
@@ -54,11 +57,31 @@ body {
         @include grid_row(40px);
 
         .item {
-            @include grid_column(2);
+            @include grid_column(3);
             background-color: #323738;
             color: #fff;
-            padding: 16px;
             padding-bottom: 24px;
+            padding-top: 24px;
+            position: relative;
+            margin-bottom: 24px;
+            text-decoration: none;
+
+            transition: transform 0.3s;
+
+            .delete {
+                align-items: center;
+                background-color: #d81717;
+                border-radius: 100%;
+                border: 0px;
+                cursor: pointer;
+                display: flex;
+                height: 32px;
+                justify-content: center;
+                position: absolute;
+                right: -12px;
+                top: -12px;
+                width: 32px;
+            }
 
             img {
                 border: 0px;
@@ -68,30 +91,129 @@ body {
             }
 
             h2 {
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-top: 16px;
             }
             
             p {
                 color: #9aa5a8;
                 font-size: 14px;
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-top: 4px;
             }
             
             h4 {
                 color: rgb(211, 211, 211);
                 font-size: 16px;
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-top: 16px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
             }
 
             h3 {
                 font-size: 24px;
-                margin-left: 15%;
+                margin-left: 10%;
                 margin-top: 4px;
+
+                a {
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+
+            .red {
+                color: #d81717;
+            }
+            .orange {
+                color: #fd800b;
+            }
+            .yellow {
+                color: #ffd900;
+            }
+            .green {
+                color: #28f121;
             }
         }
 
+        .item:hover {
+            transform: scale(1.05);
+        }
+
+        .item:nth-child(4n) {
+            margin-right: 0px;
+        }
+
+    }
+
+    .darkBackground {
+        background-color: rgba(0, 0, 0, 0.719);
+        height: 100vh;
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    
+    .darkBackground.show {
+        display: flex;
+    }
+
+    #newItemForm {
+        background-color: #323738;
+        border-radius: 4px;
+        -webkit-box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        position: relative;
+        padding: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width: 400px;
+
+        #closeAddItem {
+            align-items: center;
+            background-color: #d81717;
+            border-radius: 100%;
+            border: 0px;
+            cursor: pointer;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            position: absolute;
+            right: -12px;
+            top: -12px;
+            width: 32px;
+        }
+
+        h3 {
+            padding: 8px;
+            text-align: center;
+        }
+
+        label {
+            margin: 0px 0px 4px 10px;
+        }
+
+        input, select {
+            height: 24px;
+            margin: 0px 0px 8px 8px;
+        }
+
+        button {
+            cursor: pointer;
+            height: 24px;
+            margin: 24px auto 0px;
+            width: 20%;
+        }
     }
 }

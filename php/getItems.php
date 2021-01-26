@@ -1,6 +1,9 @@
 <?php
+// Get Specific CS GO Skin from Skinport Api
+$itemName = rawurlencode($_POST['itemName']);
+
 // get CS Go Item
-$url = "https://api.skinport.com/v1/sales/history?app_id=730&market_hash_name=%E2%98%85%20Karambit%20%7C%20Slaughter%20(Minimal%20Wear)";
+$url = "https://api.skinport.com/v1/sales/history?app_id=730&market_hash_name=" . $itemName;
 
 $curl = curl_init($url);
 curl_setopt($curl, CURLOPT_URL, $url);

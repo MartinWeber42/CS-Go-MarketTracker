@@ -36,11 +36,15 @@ html {
 
     form {
         background-color: #323738;
+        border-radius: 8px;
+        -webkit-box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
+        box-shadow: 2px 2px 18px -5px rgba(0,0,0,0.75);
         display: flex;
         flex-direction: column;
         height: fit-content;
         margin: auto;
-        width: 20%;
+        width: 360px;
 
         h1 {
             color: #fff;
@@ -50,20 +54,44 @@ html {
         }
 
         input {
+            background-color: #35393a;
             border-radius: 4px;
-            border: 0px;
+            border: solid 1px #636464;
+            color: #fff;
             height: 32px;
             margin: 8px auto 8px auto;
+            outline: none;
             padding-left: 8px;
             width: 80%;
         }
 
+        input.hide {
+            border: 0px;
+            height: 0px;
+        }
+
         input[type=submit] {
             background-color: #4db5da;
+            border: 0px;
             color: #fff;
             cursor: pointer;
-            margin: 8px auto 40px auto;
+            margin: 16px auto 24px auto;
             width: 83%;
+        }
+
+        #email { margin-top: -8px; }
+        
+        #passwordRepeat { margin-bottom: -8px; }
+
+        a {
+            color: #fff;
+            cursor: pointer;
+            margin: 0px 0px 24px 0px;
+            text-align: center;
+        }
+
+        a.hide {
+            display: none;
         }
     }
 }
